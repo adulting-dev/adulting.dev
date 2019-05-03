@@ -13,15 +13,31 @@
     <main class="container" role="main">
 
         {%for page_component in page_components%}
-            {%if page_component.content_type.id == 'contentBlock' %}
+            {%if page_component.content_type.id == 'headBlock' %}
+                <div class="row" id="{{page_component.section_title}}">
+                    <div class="col">
+                        <h1>{{page_component.section_title}}</h1>
+                        {{renderer.render(page_component.content)|safe}}
+                    </div>
+                </div>
                 <div class="row">
+                    {%for button in page_component.cta%}
+                    <div class="col">
+                        Temp
+                        {{button}}
+                    </div>
+                    {%endfor%}
+                </div>
+
+            {%elif page_component.content_type.id == 'contentBlock' %}
+                <div class="row" id="{{page_component.section_title}}">
                     <div class="col">
                         <h1>{{page_component.section_title}}</h1>
                         {{renderer.render(page_component.content)|safe}}
                     </div>
                 </div>
             {% elif page_component.content_type.id == 'locationBlock' %}
-                <div class="row">
+                <div class="row" id="{{page_component.section_title}}">
                     <div class="col">
                         <h1>{{page_component.section_title}}</h1>
                         <p>{{page_component.location_string}}</p>
@@ -35,7 +51,7 @@
                    </div>
                 </div>
             {% elif page_component.content_type.id == 'sponsorBlock' %}
-                <div class="row">
+                <div class="row" id="{{page_component.section_title}}">
                     <div class="col">
                         <h1>{{page_component.section_title}}</h1>
                    </div>
