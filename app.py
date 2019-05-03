@@ -7,11 +7,13 @@ from flask_bootstrap import Bootstrap
 
 import contentful
 from rich_text_renderer import RichTextRenderer
+import os
 
-SPACE_ID = "vkfdy957l5sa"
-DELIVERY_API_KEY = "404be0eecf4bf13c1cb9db6e9ebbf747a421fbf1531d76b7cd340747802b60bd"
+SPACE_ID = os.environ.get('SPACE_ID')
+DELIVERY_API_KEY = os.environ.get('DELIVERY_API_KEY')
+API_URL = os.environ.get('API_URL')
 
-client = contentful.Client(SPACE_ID, DELIVERY_API_KEY)
+client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL)
 
 renderer = RichTextRenderer()
 

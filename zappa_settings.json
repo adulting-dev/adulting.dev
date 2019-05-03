@@ -1,0 +1,15 @@
+{
+    "production": {
+        "app_function": "app.app",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "project_name": "adulting-dev",
+        "runtime": "python3.6",
+        "s3_bucket": "adulting-dev",
+        "environment_variables": {
+            "SPACE_ID": "vkfdy957l5sa",
+            "DELIVERY_API_KEY": "404be0eecf4bf13c1cb9db6e9ebbf747a421fbf1531d76b7cd340747802b60bd",
+            "API_URL": "cdn.contentful.com"
+        }
+    }
+}
