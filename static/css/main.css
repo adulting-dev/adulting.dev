@@ -1,0 +1,28 @@
+section{
+     background-color: #fffbfc;
+}
+ h1, h2, h3, p{
+     color:#30332e;
+}
+ #headBlock h1, #headBlock h3, #headBlock p{
+     color: #fffbfc;
+}
+ #headBlock {
+     background-color: #62bbc1;
+}
+ .contentBlock h1, .contentBlock h2, .contentBlock p{
+     color: #fffbfc;
+}
+.contentBlock a {
+    color: #62bbc1;
+}
+ .contentBlock {
+     background-color: #ec058e;
+}
+
+ #sponsorBlock  h1, #sponsorBlock  h3, #sponsorBlock  p{
+     color: #30332e;
+}
+ #sponsorBlock  {
+     background-color: #fffbfc;
+}

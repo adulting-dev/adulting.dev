@@ -1,44 +1,47 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}
-    {{title}}
-{% endblock %}
+{% extends "layout.html" %}
 
-{% block navbar %}
-    <div class="navbar navbar-fixed-top">
-      <!-- ... -->
-    </div>
+{% block title %}
+    Adulting.Dev
 {% endblock %}
 
 {% block content %}
-    <main class="container" role="main">
-
         {%for page_component in page_components%}
             {%if page_component.content_type.id == 'headBlock' %}
+            <section id='headBlock' class='py-5'>
+            <div class="container" >
                 <div class="row" id="{{page_component.section_title}}">
-                    <div class="col">
+                    <div class="col" align="center">
                         <h1>{{page_component.section_title}}</h1>
                         {{renderer.render(page_component.content)|safe}}
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" align="center">
+                    <div class="col"></div>
                     {%for button in page_component.cta%}
                     <div class="col">
-                        Temp
-                        {{button}}
+                        <a class="btn btn-outline-dark" href="{{button.resolve(client).section_link}}" role="button">{{button.resolve(client).section_title}}</a>
                     </div>
                     {%endfor%}
+                    <div class="col"></div>
                 </div>
-
+            </div>
+            </section>
             {%elif page_component.content_type.id == 'contentBlock' %}
+            <section class='contentBlock py-5'>
+            <div class="container"  >
                 <div class="row" id="{{page_component.section_title}}">
                     <div class="col">
                         <h1>{{page_component.section_title}}</h1>
                         {{renderer.render(page_component.content)|safe}}
                     </div>
                 </div>
+            </div>
+            </section>
             {% elif page_component.content_type.id == 'locationBlock' %}
+            <section class='locationBlock py-5'>
+            <div class="container"  >
                 <div class="row" id="{{page_component.section_title}}">
-                    <div class="col">
+                    <div class="col" align="center">
                         <h1>{{page_component.section_title}}</h1>
                         <p>{{page_component.location_string}}</p>
                         <iframe
@@ -50,33 +53,35 @@
                         </iframe>
                    </div>
                 </div>
+            </div>
+            </section>
             {% elif page_component.content_type.id == 'sponsorBlock' %}
-                <div class="row" id="{{page_component.section_title}}">
-                    <div class="col">
-                        <h1>{{page_component.section_title}}</h1>
-                   </div>
-                </div>
-                <div class="row justify-content-center">
-                    {%for sponsor in page_component.sponsors%}
-                        <div class="col-lg-4">
-                            <a href="{{sponsor.description}}" >
-                                <img src="{{sponsor.url(w=300, fm='jpg', q=100)}}" alt="{{sponsor.title}}" class="img-fluid">
-                            </a>
-                        </div><!-- /.col-lg-4 -->
-                    {%endfor%}
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <h2>Conference inspired by: </h2>
-                    <a href="{{page_component.forked_from.description}}" >
-                        <img src="{{page_component.forked_from.url(w=300, fm='jpg', q=100)}}" alt="{{page_component.forked_from.title}}" class="img-fluid">
-                    </a>
+            <section id='sponsorBlock' class='py-5'>
+                  <div class="container">
+                    <div class="row" id="{{page_component.section_title}}">
+                        <div class="col" align="center">
+                            <h1>{{page_component.section_title}}</h1>
+                       </div>
                     </div>
-
+                    <div class="row">
+                        {%for sponsor in page_component.sponsors%}
+                            <div class="col" align="center">
+                                <a href="{{sponsor.description}}" >
+                                    <img src="{{sponsor.url(w=300, fm='jpg', q=100)}}" alt="{{sponsor.title}}" class="img-fluid">
+                                </a>
+                            </div>
+                        {%endfor%}
+                    </div>
+                    <div class="row">
+                        <div class="col" align="center">
+                        <h2>Conference inspired by: </h2>
+                        <a href="{{page_component.forked_from.description}}" >
+                            <img src="{{page_component.forked_from.url(w=300, fm='jpg', q=100)}}" alt="{{page_component.forked_from.title}}" class="img-fluid">
+                        </a>
+                        </div>
+                    </div>
                 </div>
+            </section>
             {% endif %}
-
         {%endfor%}
-
-    </main>
 {% endblock %}
