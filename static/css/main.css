@@ -1,15 +1,14 @@
-
 :root {
-    --White:#fffbfc;
-    --Grey:#2f3344;
+    --White: #fffbfc;
+    --Grey: #2f3344;
     --Primary: hsl(322, 63%, 50%);
-    --Secondary: hsla(182, 63%, 50%,1);
+    --Secondary: hsla(182, 63%, 50%, 1);
     --Tertiary: hsla(60, 80%, 60%, 1);
 }
 
-section{
+section {
     background-color: var(--White);
-    padding-top:6rem;
+    padding-top: 6rem;
     padding-bottom: 6rem;
 }
 
@@ -17,44 +16,57 @@ p {
     font-size: 1.2rem;
 }
 
- h1, h2, h3, p{
-     color: var(--Grey);
+h1,
+h2,
+h3,
+p {
+    color: var(--Grey);
 }
- #headBlock h1, #headBlock h3, #headBlock p{
-     color: var(--White);
+#headBlock h1,
+#headBlock h3,
+#headBlock p {
+    color: var(--White);
 }
-#headBlock p{
+#headBlock p {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
- #headBlock {
-     background-color: var(--Primary);
+#headBlock {
+    background-color: var(--Primary);
 }
- .contentBlock h1, .contentBlock h2, .contentBlock h3, .contentBlock p{
-     color: var(--White);
+.contentBlock h1,
+.contentBlock h2,
+.contentBlock h3,
+.contentBlock p {
+    color: var(--White);
 }
 .contentBlock a {
     color: var(--Tertiary);
 }
- .contentBlock {
-     background-color: var(--Secondary);
+.contentBlock {
+    background-color: var(--Secondary);
 }
 
- .locationBlock {
-     background-color: var(--Tertiary);
+.locationBlock {
+    background-color: var(--Tertiary);
 }
- .locationBlock h1, .locationBlock h2, .locationBlock h3, .locationBlock p{
-     color: var(--Grey);
-}
-
- #sponsorBlock  h1, #sponsorBlock  h3, #sponsorBlock  p{
+.locationBlock h1,
+.locationBlock h2,
+.locationBlock h3,
+.locationBlock p {
     color: var(--Grey);
 }
- #sponsorBlock  {
-     background-color: var(--White);
+
+#sponsorBlock h1,
+#sponsorBlock h3,
+#sponsorBlock p {
+    color: var(--Grey);
+}
+#sponsorBlock {
+    background-color: var(--White);
 }
 
-#sponsorBlock .row{
+#sponsorBlock .row {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -69,4 +81,3 @@ p {
     background-color: var(--Tertiary);
     border-color: var(--Tertiary);
 }
-
