@@ -11,11 +11,23 @@ section {
     padding-top: 6rem;
     padding-bottom: 6rem;
 }
-
+h1,
+h2,
+h3 {
+    /*font-family: 'Spirax', cursive;*/
+    /*font-family: 'Playfair Display', serif;*/
+    /*font-family: 'Megrim', cursive;*/
+    font-family: 'Codystar', cursive;
+}
+a,
 p {
     font-size: 1.2rem;
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Montserrat', sans-serif;
 }
-
 h1,
 h2,
 h3,
