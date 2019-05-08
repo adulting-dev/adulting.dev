@@ -1,7 +1,7 @@
 
 :root {
     --White:#fffbfc;
-    --Grey:#4c5270;
+    --Grey:#2f3344;
     --Primary: hsl(322, 63%, 50%);
     --Secondary: hsla(182, 63%, 50%,1);
     --Tertiary: hsla(60, 80%, 60%, 1);
@@ -12,11 +12,20 @@ section{
     padding-top:6rem;
     padding-bottom: 6rem;
 }
+
+p {
+    font-size: 1.2rem;
+}
+
  h1, h2, h3, p{
      color: var(--Grey);
 }
  #headBlock h1, #headBlock h3, #headBlock p{
      color: var(--White);
+}
+#headBlock p{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
  #headBlock {
      background-color: var(--Primary);
@@ -45,13 +54,18 @@ section{
      background-color: var(--White);
 }
 
+#sponsorBlock .row{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 .btn-outline-warning {
     color: var(--Tertiary);
     border-color: var(--Tertiary);
 }
 
 .btn-outline-warning:hover {
-    color: var(--White);
+    color: var(--Grey);
     background-color: var(--Tertiary);
     border-color: var(--Tertiary);
 }
