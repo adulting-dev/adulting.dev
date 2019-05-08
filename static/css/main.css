@@ -19,7 +19,7 @@ section{
  #headBlock {
      background-color: var(--Cyan);
 }
- .contentBlock h1, .contentBlock h2, .contentBlock p{
+ .contentBlock h1, .contentBlock h2, .contentBlock h3, .contentBlock p{
      color: var(--Null-White);
 }
 .contentBlock a {
