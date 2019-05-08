@@ -65,7 +65,7 @@
                     </div>
                     <div class="row">
                         {%for sponsor in page_component.sponsors%}
-                            <div class="col" align="center">
+                            <div class="col-12 col-md-6 my-2" align="center">
                                 <a href="{{sponsor.description}}" >
                                     <img src="{{sponsor.url(w=300, fm='jpg', q=100)}}" alt="{{sponsor.title}}" class="img-fluid">
                                 </a>
@@ -74,11 +74,11 @@
                     </div>
                     <div class="row">
                         <div class="col" align="center">
-                        <h2>Conference inspired by: </h2>
+                        <h1>Conference inspired by: </h1>
                     </div>
                 </div>
                 <div class="row">
-                        <div class="col" align="center">
+                        <div class="col mt-2" align="center">
                         <a href="{{page_component.forked_from.description}}" >
                             <img src="{{page_component.forked_from.url(w=300, fm='jpg', q=100)}}" alt="{{page_component.forked_from.title}}" class="img-fluid">
                         </a>
