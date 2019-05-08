@@ -1,28 +1,48 @@
+:root {
+    --Null-White:#fffbfc;
+    --Cornflower-Grey:#4c5270;
+    --Cyan:#43dde2;
+    --Hot-Pink:#f50ca0;
+    --Yellow:#f9f940;
+    --Scallop-Seashell:#eac5b0;
+}
+
 section{
-     background-color: #fffbfc;
+     background-color: var(--Null-White);
 }
  h1, h2, h3, p{
-     color:#30332e;
+     color: var(--Cornflower-Grey);
 }
  #headBlock h1, #headBlock h3, #headBlock p{
-     color: #fffbfc;
+     color: var(--Null-White);
 }
  #headBlock {
-     background-color: #62bbc1;
+     background-color: var(--Cyan);
 }
  .contentBlock h1, .contentBlock h2, .contentBlock p{
-     color: #fffbfc;
+     color: var(--Null-White);
 }
 .contentBlock a {
-    color: #62bbc1;
+    color: var(--Yellow);
 }
  .contentBlock {
-     background-color: #ec058e;
+     background-color: var(--Hot-Pink);
 }
 
  #sponsorBlock  h1, #sponsorBlock  h3, #sponsorBlock  p{
-     color: #30332e;
+    color: var(--Cornflower-Grey);
 }
  #sponsorBlock  {
-     background-color: #fffbfc;
+     background-color: var(--Null-White);
+}
+
+.btn-outline-warning {
+    color: var(--Yellow);
+    border-color: var(--Yellow);
+}
+
+.btn-outline-warning:hover {
+    color: var(--Scallop-Seashell);
+    background-color: var(--Yellow);
+    border-color: var(--Yellow);
 }
