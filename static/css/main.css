@@ -16,8 +16,8 @@ h2,
 h3 {
     /*font-family: 'Spirax', cursive;*/
     /*font-family: 'Playfair Display', serif;*/
-    /*font-family: 'Megrim', cursive;*/
-    font-family: 'Codystar', cursive;
+    font-family: 'Megrim', cursive;
+    /*font-family: 'Codystar', cursive;*/
 }
 a,
 p {
@@ -25,8 +25,9 @@ p {
     /*font-family: 'Open Sans', sans-serif;*/
     /*font-family: 'Montserrat', sans-serif;*/
     /*font-family: 'Source Sans Pro', sans-serif;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto Slab', serif;*/
+    /*font-family: 'Montserrat', sans-serif;*/
 }
 h1,
 h2,
@@ -49,7 +50,8 @@ p {
 .contentBlock h1,
 .contentBlock h2,
 .contentBlock h3,
-.contentBlock p {
+.contentBlock p,
+.contentBlock ul {
     color: var(--White);
 }
 .contentBlock a {
