@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from flask_caching import Cache
 
 import contentful
 from rich_text_renderer import RichTextRenderer
@@ -14,18 +13,9 @@ DEBUG_STATUS = os.environ.get("DEBUG_STATUS")
 client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL)
 renderer = RichTextRenderer()
 
-config = {
-    "DEBUG": DEBUG_STATUS,          # some Flask specific configs
-    "CACHE_TYPE": "simple", # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 60
-}
 app = Flask(__name__)
 
-app.config.from_mapping(config)
-cache = Cache(app)
-
 @app.route("/")
-@cache.cached(timeout=60)
 def home_page():
     entry = client.entry("1l3EHYzPbgf9UUV0oEyTDs")
 

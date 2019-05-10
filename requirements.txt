@@ -11,7 +11,6 @@ dominate==2.3.5
 durationpy==0.5
 Flask==1.0.2
 Flask-Bootstrap==3.3.7.1
-Flask-Caching==1.7.1
 future==0.16.0
 hjson==3.0.1
 idna==2.8
