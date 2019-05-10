@@ -17,7 +17,7 @@ renderer = RichTextRenderer()
 config = {
     "DEBUG": DEBUG_STATUS,          # some Flask specific configs
     "CACHE_TYPE": "simple", # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 50
+    "CACHE_DEFAULT_TIMEOUT": 60
 }
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ app.config.from_mapping(config)
 cache = Cache(app)
 
 @app.route("/")
-@cache.cached(timeout=86400)
+@cache.cached(timeout=60)
 def home_page():
     entry = client.entry("1l3EHYzPbgf9UUV0oEyTDs")
 
