@@ -7,6 +7,7 @@ import os
 SPACE_ID = os.environ.get("SPACE_ID")
 DELIVERY_API_KEY = os.environ.get("DELIVERY_API_KEY")
 API_URL = os.environ.get("API_URL")
+MAP_KEY = os.environ.get("MAP_KEY")
 
 client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL)
 
@@ -25,6 +26,7 @@ def home_page():
         title=entry.page_title,
         page_components=entry.page_component,
         client=client,
+        MAP_KEY=MAP_KEY
     )
 
 

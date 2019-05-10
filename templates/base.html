@@ -52,7 +52,7 @@
                             &zoom=17&size=640x640
                             &maptype=roadmap
                             &markers=color:cyan%7Clabel:MicrosoftHQ%7C{{page_component.location.lat}},{{page_component.location.lon}}
-                            &key=AIzaSyBzRPMffDZ7jswDf81Qrw9Sz8_ebsLjY7Q" alt='Venue on a map'>
+                            &key={{MAP_KEY}}" alt='Venue on a map'>
                         <div id="map" style="display: none">
                             <iframe
                               width="640"
@@ -79,7 +79,11 @@
                         {%for sponsor in page_component.sponsors%}
                             <div class="col-12 col-md-6 my-2" align="center">
                                 <a href="{{sponsor.description}}" >
-                                    <img src="https:{{sponsor.url(w=300, fm='jpg', q=100)}}" alt="{{sponsor.title}}" class="img-fluid">
+                                    <picture>
+                                      <source srcset="https:{{sponsor.url(w=300, fm='webp', q=100)}}" type="image/webp">
+                                      <img src="https:{{sponsor.url(w=300, fm='jpg', q=100)}}" alt="{{sponsor.title}}" class="img-fluid">
+                                    </picture>
+
                                 </a>
                             </div>
                         {%endfor%}
