@@ -20,7 +20,7 @@ def home_page():
     entry = client.entry("1l3EHYzPbgf9UUV0oEyTDs")
 
     return render_template(
-        "base.html",
+        "home.html",
         renderer=renderer,
         title=entry.page_title,
         page_components=entry.page_component,
