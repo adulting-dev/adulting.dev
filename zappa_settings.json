@@ -9,8 +9,9 @@
         "environment_variables": {
             "SPACE_ID": "vkfdy957l5sa",
             "DELIVERY_API_KEY": "404be0eecf4bf13c1cb9db6e9ebbf747a421fbf1531d76b7cd340747802b60bd",
-            "API_URL": "cdn.contentful.com"
-            "MAP_KEY": ""
+            "API_URL": "cdn.contentful.com",
+            "MAP_KEY": "",
+            "DEBUG_STATUS" : "FALSE"
         }
     },
     "preview": {
@@ -23,8 +24,9 @@
         "environment_variables": {
             "SPACE_ID": "vkfdy957l5sa",
             "DELIVERY_API_KEY": "9ae54c0277b7d4c6f439417cd13332ba207f05c4a59aa19f4f1c2cdd7de0ab14",
-            "API_URL": "preview.contentful.com"
-            "MAP_KEY": ""
+            "API_URL": "preview.contentful.com",
+            "MAP_KEY": "",
+            "DEBUG_STATUS" : "FALSE"
         }
     }
 }
