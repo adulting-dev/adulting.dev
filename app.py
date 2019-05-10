@@ -12,13 +12,12 @@ MAP_KEY = os.environ.get("MAP_KEY")
 DEBUG_STATUS = os.environ.get("DEBUG_STATUS")
 
 client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL)
-
 renderer = RichTextRenderer()
 
 config = {
     "DEBUG": DEBUG_STATUS,          # some Flask specific configs
     "CACHE_TYPE": "simple", # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 86400
+    "CACHE_DEFAULT_TIMEOUT": 50
 }
 app = Flask(__name__)
 
@@ -26,7 +25,7 @@ app.config.from_mapping(config)
 cache = Cache(app)
 
 @app.route("/")
-@cache.cached()
+@cache.cached(timeout=86400)
 def home_page():
     entry = client.entry("1l3EHYzPbgf9UUV0oEyTDs")
 
