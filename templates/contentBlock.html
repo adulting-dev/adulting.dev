@@ -1,0 +1,12 @@
+{% block contentBlock %}
+    <section class='contentBlock '>
+        <div class="container"  >
+            <div class="row" id="{{page_component.section_title}}">
+                <div class="col">
+                    <h1>{{page_component.section_title}}</h1>
+                    {{renderer.render(page_component.content)|safe}}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
