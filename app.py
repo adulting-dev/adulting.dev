@@ -6,7 +6,6 @@ from rich_text_renderer.base_node_renderer import BaseNodeRenderer
 from rich_text_renderer.null_renderer import NullRenderer
 import os
 
-# BaseNodeRenderer implements the `__init__` method required.
 class locationBlockEntryRenderer(BaseNodeRenderer):
 
     def render(self, entry):
@@ -23,11 +22,23 @@ class locationBlockEntryRenderer(BaseNodeRenderer):
         )
 
 
+class buttonEntryRenderer(BaseNodeRenderer):
+
+    def render(self, entry):
+        return """<div class="col">
+                        <a class="btn btn-outline-warning" href="{1}" role="button">{0}</a>
+                    </div>""".format(
+            entry.section_title, entry.section_link
+        )
+
+
 class BaseBlockEntryRenderer(BaseNodeRenderer):
     __RENDERERS__ = []
 
     def render(self, node):
         entry = node["data"]["target"]
+        if type(entry) == contentful.resource.Link:
+            entry = entry.resolve(client)
         renderer = None
         try:
             renderer = [
@@ -50,10 +61,12 @@ DEBUG_STATUS = os.environ.get("DEBUG_STATUS")
 
 client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL)
 
-BaseBlockEntryRenderer.__RENDERERS__ += [locationBlockEntryRenderer]
+BaseBlockEntryRenderer.__RENDERERS__ += [
+    locationBlockEntryRenderer,
+    buttonEntryRenderer,
+]
 
 renderer = RichTextRenderer({"embedded-entry-block": BaseBlockEntryRenderer})
-
 
 app = Flask(__name__)
 
