@@ -7,13 +7,13 @@
 {% block content %}
         {%for page_component in page_components%}
             {%if page_component.content_type.id == 'headBlock' %}
-                {% include "headBlock.html" %}
+                {% include "Block/head.html" %}
             {%elif page_component.content_type.id == 'contentBlock' %}
-                {% include "contentBlock.html" %}
+                {% include "Block/content.html" %}
             {% elif page_component.content_type.id == 'locationBlock' %}
-                {% include "locationBlock.html" %}
+                {% include "Block/location.html" %}
             {% elif page_component.content_type.id == 'sponsorBlock' %}
-                {% include "sponsorBlock.html" %}
+                {% include "Block/sponsor.html" %}
             {% endif %}
         {%endfor%}
 {% endblock %}
