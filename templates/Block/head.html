@@ -1,21 +1,21 @@
 {% block head %}
-            <section id='headBlock' >
-                <div class="container" >
-                    <div class="row" id="{{page_component.section_title}}">
-                        <div class="col" align="center">
-                            <h1>{{page_component.section_title}}</h1>
-                            {{renderer.render(page_component.content)|safe}}
-                        </div>
-                    </div>
-                    <div class="row" align="center">
-                        <div class="col"></div>
-                        {%for button in page_component.cta%}
-                        <div class="col">
-                            <a class="btn btn-outline-warning" href="{{button.resolve(client).section_link}}" role="button">{{button.resolve(client).section_title}}</a>
-                        </div>
-                        {%endfor%}
-                        <div class="col"></div>
-                    </div>
+    <section id='headBlock' >
+        <div class="container" >
+            <div class="row" id="{{page_component.section_title}}">
+                <div class="col" align="center">
+                    <h1>{{page_component.section_title}}</h1>
+                    {{renderer.render(page_component.content)|safe}}
                 </div>
-            </section>
+            </div>
+            <div class="row" align="center">
+                <div class="col"></div>
+                {%for button in page_component.cta%}
+                <div class="col">
+                    <a class="btn btn-outline-warning" href="{{button.resolve(client).section_link}}" role="button">{{button.resolve(client).section_title}}</a>
+                </div>
+                {%endfor%}
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

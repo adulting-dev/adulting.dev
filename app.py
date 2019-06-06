@@ -6,20 +6,36 @@ from rich_text_renderer.base_node_renderer import BaseNodeRenderer
 from rich_text_renderer.null_renderer import NullRenderer
 import os
 
+
 class locationBlockEntryRenderer(BaseNodeRenderer):
 
     def render(self, entry):
         return """<div class="col my-auto" align="center">
-                        <h1>{0}</h1>
-                        <p>{1}</p>
-                        <p>{2}</p>
-                        <p>{3}</p>
-                    </div>""".format(
+                    <h1>{0}</h1>
+                    <p>{1}</p>
+                </div>
+                <div class="col" align="center">
+                    <div id="map">
+                        <iframe
+                          width="100%"
+                          height="640"
+                          frameborder="0" style="border:0"
+                          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBzRPMffDZ7jswDf81Qrw9Sz8_ebsLjY7Q
+                            &q={1}" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>""".format(
             entry.section_title,
             entry.location_string,
             entry.location.lat,
             entry.location.lon,
         )
+
+
+# class locationBlockInlineRenderer(BaseNodeRenderer):
+#     def render(self, node):
+# entry = node["data"]["target"]
+# return "<{0} href='#{1}'>{1}</{0}>".format(self._render_tag, entry.section_title)
 
 
 class buttonEntryRenderer(BaseNodeRenderer):
@@ -30,6 +46,19 @@ class buttonEntryRenderer(BaseNodeRenderer):
                     </div>""".format(
             entry.section_title, entry.section_link
         )
+
+
+class BaseInlineRenderer(BaseNodeRenderer):
+
+    def render(self, node):
+        entry = node["data"]["target"]
+        return "<{0} href='#{1}'>{1}</{0}>".format(
+            self._render_tag, entry.section_title
+        )
+
+    @property
+    def _render_tag(self):
+        return "a"
 
 
 class BaseBlockEntryRenderer(BaseNodeRenderer):
@@ -58,15 +87,21 @@ DELIVERY_API_KEY = os.environ.get("DELIVERY_API_KEY")
 API_URL = os.environ.get("API_URL")
 MAP_KEY = os.environ.get("MAP_KEY")
 DEBUG_STATUS = os.environ.get("DEBUG_STATUS")
+ENV = os.environ.get("ENV")
 
-client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL)
+client = contentful.Client(SPACE_ID, DELIVERY_API_KEY, API_URL, environment=ENV)
 
 BaseBlockEntryRenderer.__RENDERERS__ += [
     locationBlockEntryRenderer,
     buttonEntryRenderer,
 ]
 
-renderer = RichTextRenderer({"embedded-entry-block": BaseBlockEntryRenderer})
+renderer = RichTextRenderer(
+    {
+        "embedded-entry-block": BaseBlockEntryRenderer,
+        "embedded-entry-inline": BaseInlineRenderer,
+    }
+)
 
 app = Flask(__name__)
 
