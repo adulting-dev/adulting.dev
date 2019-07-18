@@ -1,4 +1,5 @@
 argcomplete==1.9.3
+attrs==17.2.0
 boto3==1.9.140
 botocore==1.12.140
 certifi==2019.3.9
@@ -6,11 +7,14 @@ cfn-flip==1.2.0
 chardet==3.0.4
 Click==7.0
 contentful==1.11.4
+docopt==0.6.2
 docutils==0.14
 dominate==2.3.5
 durationpy==0.5
 Flask==1.0.2
 Flask-Bootstrap==3.3.7.1
+Flask-Caching==1.7.1
+Flask-Markdown==0.3
 future==0.16.0
 hjson==3.0.1
 idna==2.8
@@ -19,7 +23,9 @@ Jinja2==2.10.1
 jmespath==0.9.3
 kappa==0.6.0
 lambda-packages==0.20.0
+Markdown==3.1.1
 MarkupSafe==1.1.1
+parsy==1.1.0
 placebo==0.9.0
 python-dateutil==2.6.1
 python-dotenv==0.10.1

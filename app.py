@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from flaskext.markdown import Markdown
 import contentful
 from rich_text_renderer import RichTextRenderer
 from rich_text_renderer.base_node_renderer import BaseNodeRenderer
@@ -35,7 +35,7 @@ renderer = RichTextRenderer(
 )
 
 app = Flask(__name__)
-
+Markdown(app)
 
 @app.route("/")
 def home_page():

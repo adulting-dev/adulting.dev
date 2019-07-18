@@ -61,7 +61,8 @@ p {
     background-color: var(--Secondary);
 }
 
-.locationBlock {
+.locationBlock,
+.footerBlock {
     background-color: var(--Tertiary);
 }
 .locationBlock h1,

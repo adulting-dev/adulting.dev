@@ -14,6 +14,8 @@
                 {% include "Block/location.html" %}
             {% elif page_component.content_type.id == 'sponsorBlock' %}
                 {% include "Block/sponsor.html" %}
+            {% elif page_component.content_type.id == 'footerBlock' %}
+                {% include "Block/footer.html" %}
             {% endif %}
         {%endfor%}
 {% endblock %}
