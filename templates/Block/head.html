@@ -2,18 +2,20 @@
     <section id='headBlock' >
         <div class="container" >
             <div class="row" id="{{page_component.section_title}}">
-                <div class="col" align="center">
-                    <h1>{{page_component.section_title}}</h1>
-                    {{renderer.render(page_component.content)|safe}}
-                </div>
-            </div>
-            <div class="row" align="center">
                 <div class="col"></div>
-                {%for button in page_component.cta%}
-                <div class="col">
-                    <a class="btn btn-outline-warning" href="{{button.resolve(client).section_link}}" role="button">{{button.resolve(client).section_title}}</a>
+                <div class="col-md-6 has-rocket">
+                    <div class="rocket d-none d-md-block slideUp"></div>
+                    <h1 class="title">
+                      {{page_component.section_title}}
+                      <br>
+                      <small>.dev</small> <!-- page_component.section_subtitle -->
+                    </h1>
+                    {{renderer.render(page_component.content)|safe}}
+                    {%for button in page_component.cta%}
+                        <a class="btn btn-outline-warning btn-lg" href="{{button.resolve(client).section_link}}" role="button">{{button.resolve(client).section_title}}</a>
+                        &nbsp;&nbsp;
+                    {%endfor%}
                 </div>
-                {%endfor%}
                 <div class="col"></div>
             </div>
         </div>
