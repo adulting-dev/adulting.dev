@@ -1,14 +1,14 @@
 {% block head %}
     <section id='headBlock' >
         <div class="container" >
-            <div class="row" id="{{page_component.section_title}}">
+            <div class="row" id="{{page_component.section_title}}{{page_component.section_subtitle}}">
                 <div class="col"></div>
                 <div class="col-md-6 has-rocket">
                     <div class="rocket d-none d-md-block slideUp"></div>
                     <h1 class="title">
                       {{page_component.section_title}}
                       <br>
-                      <small>.dev</small> <!-- page_component.section_subtitle -->
+                      <small>{{page_component.section_subtitle}}</small>
                     </h1>
                     {{renderer.render(page_component.content)|safe}}
                     {%for button in page_component.cta%}
