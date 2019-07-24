@@ -1,6 +1,6 @@
 :root {
     --White: #FFFFFF;
-    --Grey: #2f3344;
+    --Grey: #103B5C;
     --Primary: hsl(322, 63%, 50%);
     --Secondary: hsla(182, 63%, 50%, 1);
     --Tertiary: hsla(60, 80%, 60%, 1);
@@ -16,7 +16,7 @@ h2,
 h3 {
     /*font-family: 'Spirax', cursive;*/
     /*font-family: 'Playfair Display', serif;*/
-    font-family: 'Megrim', cursive;
+    font-family: 'Cubano', cursive;
     /*font-family: 'Codystar', cursive;*/
 }
 a,
@@ -40,29 +40,101 @@ p {
 #headBlock p {
     color: var(--White);
 }
+#headBlock h1.title {
+    font-size: 72px;
+    line-height: 56px;
+}
+#headBlock h1.title small {
+    font-size: 48px;
+}
 #headBlock p {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 #headBlock {
-    background-color: var(--Primary);
+    overflow: hidden;
+    background-color: var(--Grey);
+}
+.has-rocket {
+    position: relative;
+}
+.rocket {
+    display: block;
+    position: absolute;
+    top: -24px;
+    left: -112px;
+    width: 150px;
+    height: 150px;
+}
+/* rocket image */
+.rocket::after {
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/rocket@2x.png);
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+/* rocket trails */
+.rocket::before {
+    position: absolute;
+    content: ' ';
+    width: 60px;
+    height: 400px; /* 100vh */
+    top: 120px;
+    left: 50%;
+    margin-left: -30px;
+    background:
+      linear-gradient(
+        to right,
+        var(--Primary)  0%, var(--Primary) 33%,
+        var(--Secondary) 33%, var(--Secondary) 66%,
+        var(--Tertiary) 66%, var(--Tertiary) 100%
+      );
+}
+.contentBlock .container {
+    background: var(--White);
+    padding: 1em;
 }
 .contentBlock h1,
 .contentBlock h2,
 .contentBlock h3,
 .contentBlock p,
 .contentBlock ul {
-    color: var(--White);
+    color: var(--Grey);
+}
+.contentBlock h1 {
+    display: inline-block;
+    margin-bottom: .5em;
+    border-bottom: 4px solid;
 }
 .contentBlock a {
-    color: var(--Tertiary);
+    color: var(--Primary);
 }
 .contentBlock {
     background-color: var(--Secondary);
 }
-
-.locationBlock,
-.footerBlock {
+.contentBlock:nth-of-type(3n+1) {
+    background-color: var(--Primary);
+}
+.contentBlock:nth-of-type(3n+1) h1 {
+    border-color: var(--Primary);
+}
+.contentBlock:nth-of-type(3n+2) {
+    background-color: var(--Secondary);
+}
+.contentBlock:nth-of-type(3n+2) h1 {
+    border-color: var(--Secondary);
+}
+.contentBlock:nth-of-type(3n+3) {
+    background-color: var(--Tertiary);
+}
+.contentBlock:nth-of-type(3n+3) h1 {
+    border-color: var(--Tertiary);
+}
+.locationBlock {
     background-color: var(--Tertiary);
 }
 .locationBlock h1,
@@ -86,6 +158,19 @@ p {
     margin-bottom: 1.5rem;
 }
 
+.footerBlock {
+    background: var(--Grey);
+}
+
+.footerBlock p,
+.footerBlock a {
+    color: var(--White);
+}
+
+.footerBlock a {
+    text-decoration: underline;
+}
+
 .btn-outline-warning {
     color: var(--Tertiary);
     border-color: var(--Tertiary);
@@ -95,4 +180,48 @@ p {
     color: var(--Grey);
     background-color: var(--Tertiary);
     border-color: var(--Tertiary);
+}
+#static_map {
+    cursor: pointer;
+    max-width: 100%;
+}
+
+/* Subway Icons from NYC Core Framework */
+/* https://www1.nyc.gov/assets/doitt/html/nyc-core-framework/subway-icons.html */
+[class*="subway-icon"]::before{content:"";position:absolute;z-index:-1;width:calc(100% + .4em);height:calc(100% + .4em);left:-.2em;top:-.2em;border-radius:50%;background-color:red}[class*="subway-icon"].express{margin-left:.2666666667em;margin-right:.2666666667em}[class*="subway-icon"].express::before{transform:rotate(45deg);border-radius:0;width:calc(100% + .1em);height:calc(100% + .1em);left:-.05em;top:-.05em}.mta-red{color:#fff}.mta-red::before{background-color:#df0000}.mta-green{color:#fff}.mta-green::before{background-color:#008700}.mta-blue{color:#fff}.mta-blue::before{background-color:#0a5786}.mta-orange{color:#fff}.mta-orange::before{background-color:#de3700}.mta-purple{color:#fff}.mta-purple::before{background-color:#5a045a}.mta-green-2{color:#fff}.mta-green-2::before{background-color:#4f8403}.mta-yellow{color:#000}.mta-yellow::before{background-color:#FCCC0A}.mta-gray{color:#fff}.mta-gray::before{background-color:#666}.mta-brown{color:#fff}.mta-brown::before{background-color:#573208}
+
+/* SlideUp Animation */
+/* http://www.justinaguilar.com/animations/css/animations.css */
+.slideUp{
+  	animation-name: slideUp;
+  	animation-duration: 3s;
+  	animation-timing-function: ease;
+  	visibility: visible !important;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(150%);
+        opacity: 0;
+    }
+  	25% {
+  	  	transform: translateY(150%);
+        opacity: 0;
+  	}
+  	75%{
+  	  	transform: translateY(-8%);
+        opacity: 1;
+  	}
+  	82.5%{
+  	  	transform: translateY(4%);
+  	}
+  	90%{
+  	  	transform: translateY(-4%);
+  	}
+  	97.5%{
+  	  	transform: translateY(2%);
+  	}
+  	100% {
+  	  	transform: translateY(0%);
+  	}
 }

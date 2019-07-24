@@ -13,6 +13,7 @@ class locationBlockEntryRenderer(BaseNodeRenderer):
         return """<div class="col my-auto" align="center">
                     <h1>{0}</h1>
                     <p>{1}</p>
+                    <a class="btn btn-lg btn-outline-secondaru" href="https://www.google.com/maps?q={2}" target="_blank" role="button">View on Google Maps</a>
                 </div>
                 <div class="col" align="center">
                     <div id="map">
@@ -39,7 +40,7 @@ class buttonEntryRenderer(BaseNodeRenderer):
 
     def render(self, entry):
         return """<div class="col">
-                        <a class="btn btn-outline-warning" href="{1}" role="button">{0}</a>
+                        <a class="btn btn-lg btn-outline-warning" href="{1}" role="button">{0}</a>
                     </div>""".format(
             entry.section_title, entry.section_link
         )
