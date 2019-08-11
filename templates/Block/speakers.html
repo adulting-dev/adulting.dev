@@ -11,7 +11,7 @@
                     <div class="row">
                 {% endif %}
                 <div class="col-sm-4">
-                    <a href="{{ speaker.resolve(client).speaker_link }}"><img src="{{ speaker.resolve(client).speaker_headshot.url() }}" class="rounded img-fluid"></a>
+                    <a href="{{ speaker.resolve(client).speaker_link }}"><img src="{{ speaker.resolve(client).speaker_headshot.url() }}" class="rounded img-fluid w-100" alt="Picture of {{ speaker.resolve(client).name }}"></a>
                     <h5>{{ speaker.resolve(client).talk_title }}<br>{{ speaker.resolve(client).name }}</h5>
                     {{renderer.render(speaker.resolve(client).talk_description)|safe}}
                 </div>
