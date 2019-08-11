@@ -1,0 +1,42 @@
+{% block content %}
+    <section class='contentBlock speakerBlock'>
+        <div class="container"  >
+            <div class="row" id="{{page_component.section_title}}">
+                <div class="col">
+                    <h1>{{page_component.section_title}}</h1>
+                </div>
+            </div>
+            {% for speaker in page_component.speakers %}
+                {% if loop.index %3 == 1 %}
+                    <div class="row">
+                {% endif %}
+                <div class="col-sm-4">
+                    <a href="{{ speaker.resolve(client).speaker_link }}"><img src="{{ speaker.resolve(client).speaker_headshot.url() }}" class="rounded img-fluid"></a>
+                    <h5>{{ speaker.resolve(client).talk_title }}<br>{{ speaker.resolve(client).name }}</h5>
+                    {{renderer.render(speaker.resolve(client).talk_description)|safe}}
+                </div>
+                {% if loop.index %3 == 0 %}
+                    </div>
+                {% endif %}
+
+            {%endfor%}
+            </div>
+        </div>
+    </section>
+
+
+    <section class='contentBlock speakerBlock'>
+        <div class="container"  >
+            <div class="row" id="{{page_component.section_title}}">
+                <div class="col">
+                    <h1>{{page_component.section_title}}</h1>
+                    {% for speaker in page_component.speakers %}
+                        <h4>{{ speaker.resolve(client).talk_title }}</h4>
+                        <a href="{{ speaker.resolve(client).speaker_link }}"><h5>{{ speaker.resolve(client).name }}</h5></a>
+                        {{renderer.render(speaker.resolve(client).talk_description)|safe}}
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

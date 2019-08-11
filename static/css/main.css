@@ -13,7 +13,10 @@ section {
 }
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5
+ {
     /*font-family: 'Spirax', cursive;*/
     /*font-family: 'Playfair Display', serif;*/
     font-family: 'Cubano', cursive;
@@ -29,12 +32,16 @@ p {
     /*font-family: 'Roboto Slab', serif;*/
     /*font-family: 'Montserrat', sans-serif;*/
 }
+
 h1,
 h2,
 h3,
+h4,
+h5
 p {
     color: var(--Grey);
 }
+
 #headBlock h1,
 #headBlock h3,
 #headBlock p {
@@ -101,25 +108,34 @@ p {
 .contentBlock h1,
 .contentBlock h2,
 .contentBlock h3,
+.contentBlock h4,
+.contentBlock h5,
 .contentBlock p,
 .contentBlock ul {
     color: var(--Grey);
 }
 .contentBlock h1 {
-    display: inline-block;
+    display: table;
     margin-bottom: .5em;
     border-bottom: 4px solid;
 }
+
+.contentBlock h4 {
+  display: table;
+  border-bottom: 4px solid;
+}
+
 .contentBlock a {
     color: var(--Primary);
 }
+
 .contentBlock {
     background-color: var(--Secondary);
 }
 .contentBlock:nth-of-type(3n+1) {
     background-color: var(--Primary);
 }
-.contentBlock:nth-of-type(3n+1) h1 {
+.contentBlock:nth-of-type(3n+1) h1, .contentBlock:nth-of-type(3n+1) h4 {
     border-color: var(--Primary);
 }
 .contentBlock:nth-of-type(3n+2) {
@@ -131,7 +147,7 @@ p {
 .contentBlock:nth-of-type(3n+3) {
     background-color: var(--Tertiary);
 }
-.contentBlock:nth-of-type(3n+3) h1 {
+.contentBlock:nth-of-type(3n+3) h1, .contentBlock:nth-of-type(3n+3) h4 {
     border-color: var(--Tertiary);
 }
 .locationBlock {
