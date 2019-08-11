@@ -15,6 +15,7 @@ Flask==1.0.2
 Flask-Bootstrap==3.3.7.1
 Flask-Caching==1.7.1
 Flask-Markdown==0.3
+Frozen-Flask==0.15
 future==0.16.0
 hjson==3.0.1
 idna==2.8
