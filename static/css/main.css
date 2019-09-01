@@ -167,6 +167,7 @@ p {
 
 .speakerBlock h4, .speakerBlock h5 {
     position: relative;
+    display: block;
     margin-bottom: .5em;
     padding: .5em;
     background-color: var(--Primary);
