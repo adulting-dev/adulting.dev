@@ -1,9 +1,10 @@
 :root {
     --White: #FFFFFF;
-    --Grey: #103B5C;
-    --Primary: hsl(322, 63%, 50%);
-    --Secondary: hsla(182, 63%, 50%, 1);
-    --Tertiary: hsla(60, 80%, 60%, 1);
+    --Grey: rgb(43,40,47);
+    --Primary: #ff14ae;
+    --Secondary: #14aeff;
+    --Tertiary: #aeff14;
+
 }
 
 section {
@@ -103,7 +104,8 @@ p {
 }
 .contentBlock .container {
     background: var(--White);
-    padding: 1em;
+    padding: 2em 2.75em;
+    border-radius: 3px;
 }
 .contentBlock h1,
 .contentBlock h2,
@@ -125,8 +127,16 @@ p {
   border-bottom: 4px solid;
 }
 
-.contentBlock a {
+.contentBlock:nth-of-type(3n+1) a {
     color: var(--Primary);
+}
+
+.contentBlock:nth-of-type(3n+2) a {
+    color: var(--Secondary);
+}
+
+.contentBlock:nth-of-type(3n+3) a {
+    color: var(--Tertiary);
 }
 
 .contentBlock {
@@ -157,7 +167,7 @@ p {
 .locationBlock h2,
 .locationBlock h3,
 .locationBlock p {
-    color: var(--Grey);
+    color: var(--grey);
 }
 .locationBlock h1 {
     display: table;
