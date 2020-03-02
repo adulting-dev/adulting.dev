@@ -1,10 +1,9 @@
 :root {
     --White: #FFFFFF;
-    --Grey: rgb(43,40,47);
-    --Primary: #ff14ae;
-    --Secondary: #14aeff;
-    --Tertiary: #aeff14;
-
+    --Grey: #103B5C;
+    --Primary: hsl(322, 63%, 50%);
+    --Secondary: hsla(182, 63%, 50%, 1);
+    --Tertiary: hsla(60, 80%, 60%, 1);
 }
 
 section {
