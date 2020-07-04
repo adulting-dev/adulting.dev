@@ -114,13 +114,17 @@ To run this site you'll need to install all of the depenedencies. I'd encourage 
 
 ```console
 $ virtualenv env
+
 Using base prefix '/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7'
 New python executable in /Users/shy/Documents/adulting.dev/env/bin/python3.7
 Also creating executable in /Users/shy/Documents/adulting.dev/env/bin/python
 Installing setuptools, pip, wheel...
 done.
- $ source env/bin/activate
- $ pip install -r requirements.txt
+
+$ source env/bin/activate
+
+$ pip install -r requirements.txt
+
 Collecting certifi==2019.6.16
   Using cached certifi-2019.6.16-py2.py3-none-any.whl (157 kB)
 Collecting chardet==3.0.4
@@ -165,6 +169,7 @@ To run the site locally you can call app.py.
 
 ```console
 $ python app.py
+
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
@@ -196,7 +201,7 @@ You can now navigate to port 8000 and see a statically hosted version of the sit
 
 Head over to Netlify and create a new project using your created repo. You'll need to add all of your env vars in the build settings. Additionally you'll need to see the build settings to `python freeze.py` as your build command and `build` as your publish directory. For your build image, I'd encourage you to use `Ubuntu Trusty 14.04`. At the time of my creating this project, that was the image that I had the most success for python support.
 
-You can also head over to Contentful to setup a webhook that'll cause Netlify to trigger a rebuild anytime you publish new content.
+You can also head over to [Contentful to setup a webhook that'll cause Netlify to trigger a rebuild](https://www.contentful.com/developers/docs/tutorials/general/automate-site-builds-with-webhooks/) anytime you publish new content.
 
 License
 =======
