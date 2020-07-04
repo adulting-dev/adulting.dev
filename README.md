@@ -200,7 +200,7 @@ You can now navigate to port 8000 and see a statically hosted version of the sit
 
 #### The Netlify part (optional)
 
-Head over to Netlify and create a new project using your created repo. You'll need to add all of your env vars in the build settings. Additionally you'll need to see the build settings to `python freeze.py` as your build command and `build` as your publish directory. For your build image, I'd encourage you to use `Ubuntu Trusty 14.04`. At the time of my creating this project, that was the image that I had the most success for python support.
+Head over to Netlify and create a new project using your created repo. You'll need to add all of your env vars in the build settings. Additionally you'll need to set the build settings within Netlify to `python freeze.py` for your build command and `build` as your publish directory. For your build image, I'd encourage you to use `Ubuntu Trusty 14.04`. At the time of my creating this project, that was the image that I had the most success for python support.
 
 You can also head over to [Contentful to setup a webhook that'll cause Netlify to trigger a rebuild](https://www.contentful.com/developers/docs/tutorials/general/automate-site-builds-with-webhooks/) anytime you publish new content.
 
