@@ -20,7 +20,7 @@ For this project you'll need accounts for the following services:
 ### Setup
 
 * Fork and clone this repository
-* Rename the .env.example file to .env. If you create a Contentful account you'll want to replace your api keys with your own credentials.
+* Rename the `.env.example` file to `.env`. If you create a Contentful account you'll want to replace your api keys with your own credentials.
 
 #### The Contentful part (optional)
 
