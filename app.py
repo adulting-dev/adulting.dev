@@ -6,6 +6,10 @@ from rich_text_renderer.base_node_renderer import BaseNodeRenderer
 from rich_text_renderer.null_renderer import NullRenderer
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 from custom_renders import (
     locationBlockEntryRenderer,
     buttonEntryRenderer,
