@@ -1,5 +1,5 @@
 # adulting.dev
-Repo for the 2019 [adulting.dev](https://www.adulting.dev/) website.
+Repo for the [adulting.dev](https://www.adulting.dev/) website. You can switch to the 2019 branch to see the codebase as it was in 2019.
 
 This site builds via Flask and Flask Frozen. The content lives in [Contentful](https://www.contentful.com/) and the site itself is hosted and deployed via netlify.
 
