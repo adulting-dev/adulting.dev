@@ -8,7 +8,6 @@ MAP_KEY = os.environ.get("MAP_KEY")
 
 
 class locationBlockEntryRenderer(BaseNodeRenderer):
-
     def render(self, entry):
         return """<div class="col my-auto" align="center">
                     <h1>{0}</h1>
@@ -37,7 +36,6 @@ class locationBlockEntryRenderer(BaseNodeRenderer):
 
 
 class buttonEntryRenderer(BaseNodeRenderer):
-
     def render(self, entry):
         return """<div class="col">
                         <a class="btn btn-lg btn-outline-warning" href="{1}" role="button">{0}</a>
@@ -47,7 +45,6 @@ class buttonEntryRenderer(BaseNodeRenderer):
 
 
 class BaseInlineRenderer(BaseNodeRenderer):
-
     def render(self, node):
         entry = node["data"]["target"]
         return "<{0} href='#{1}'>{1}</{0}>".format(

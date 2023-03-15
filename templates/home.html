@@ -1,23 +1,9 @@
-{% extends "layout.html" %}
-
-{% block title %}
-    Adulting.Dev
-{% endblock %}
-
-{% block content %}
-        {%for page_component in page_components%}
-            {%if page_component.content_type.id == 'headBlock' %}
-                {% include "Block/head.html" %}
-            {%elif page_component.content_type.id == 'contentBlock' %}
-                {% include "Block/content.html" %}
-            {% elif page_component.content_type.id == 'locationBlock' %}
-                {% include "Block/location.html" %}
-            {% elif page_component.content_type.id == 'sponsorBlock' %}
-                {% include "Block/sponsor.html" %}
-            {% elif page_component.content_type.id == 'footerBlock' %}
-                {% include "Block/footer.html" %}
-            {% elif page_component.content_type.id == 'speakerBlock' %}
-                {% include "Block/speakers.html" %}
-            {% endif %}
-        {%endfor%}
-{% endblock %}
+{% extends "layout.html" %} {% block title %} Adulting.Dev {% endblock %} {% block
+content %} {%for page_component in page_components%} {%if page_component.content_type.id
+== 'headBlock' %} {% include "Block/head.html" %} {%elif page_component.content_type.id
+== 'contentBlock' %} {% include "Block/content.html" %} {% elif
+page_component.content_type.id == 'locationBlock' %} {% include "Block/location.html" %}
+{% elif page_component.content_type.id == 'sponsorBlock' %} {% include
+"Block/sponsor.html" %} {% elif page_component.content_type.id == 'footerBlock' %} {%
+include "Block/footer.html" %} {% elif page_component.content_type.id == 'speakerBlock'
+%} {% include "Block/speakers.html" %} {% endif %} {%endfor%} {% endblock %}

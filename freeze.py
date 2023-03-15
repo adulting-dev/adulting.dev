@@ -23,5 +23,5 @@ client = contentful.Client(SPACE_ID, DELIVERY_API_KEY)
 
 freezer = Freezer(app)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     freezer.freeze()
