@@ -1,7 +1,7 @@
 :root {
     --White: #FFFFFF;
     --Grey: #103B5C;
-    --Primary: hsl(322, 63%, 50%);
+    --Background: hsl(322, 63%, 50%);
     --Secondary: hsla(182, 63%, 50%, 1);
     --Tertiary: hsla(60, 80%, 60%, 1);
 }
@@ -60,7 +60,7 @@ p {
 }
 #headBlock {
     overflow: hidden;
-    background-color: var(--Grey);
+    background-color: var(--Background);
 }
 .has-rocket {
     position: relative;
@@ -96,7 +96,7 @@ p {
     background:
       linear-gradient(
         to right,
-        var(--Primary)  0%, var(--Primary) 33%,
+        var(--Grey)  0%, var(--Grey) 33%,
         var(--Secondary) 33%, var(--Secondary) 66%,
         var(--Tertiary) 66%, var(--Tertiary) 100%
       );
@@ -127,15 +127,15 @@ p {
 }
 
 .contentBlock:nth-of-type(3n+1) a {
-    color: var(--Primary);
+    color: var(--Background);
 }
 
 .contentBlock:nth-of-type(3n+2) a {
-    color: var(--Secondary);
+    color: var(--Background);
 }
 
 .contentBlock:nth-of-type(3n+3) a {
-    color: var(--Tertiary);
+    color: var(--Background);
 }
 
 .contentBlock {
@@ -224,14 +224,14 @@ p {
 }
 
 .btn-outline-warning {
-    color: var(--Tertiary);
-    border-color: var(--Tertiary);
+    color: var(--White);
+    border-color: var(--White);
 }
 
 .btn-outline-warning:hover {
-    color: var(--Grey);
-    background-color: var(--Tertiary);
-    border-color: var(--Tertiary);
+    color: var(--White);
+    background-color: var(--Secondary);
+    border-color: var(--Secondary);
 }
 #static_map {
     cursor: pointer;

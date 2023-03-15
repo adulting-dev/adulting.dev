@@ -1,41 +1,68 @@
 {% block sponsor %}
-    <section id='sponsorBlock' >
-          <div class="container">
-            <div class="row" id="{{page_component.section_title}}">
-                <div class="col" align="center">
-                    <h1>{{page_component.section_title}}</h1>
-               </div>
-            </div>
-            <div class="row">
-                {%for sponsor in page_component.sponsors%}
-                    <div class="col-12 col-md-6 my-2" align="center">
-                        <a href="{{sponsor.description}}" >
-                            <picture>
-                              <source srcset="https:{{sponsor.url(w=300, fm='webp', q=100)}}" type="image/webp">
-                              <source srcset="https:{{sponsor.url(w=300, fm='jpg', q=100)}}" type="image/jpeg">
-                              <img src="https:{{sponsor.url(w=300, fm='jpg', q=100)}}" alt="{{sponsor.title}}" class="img-fluid">
-                            </picture>
-
-                        </a>
-                    </div>
-                {%endfor%}
-            </div>
-            <div class="row">
-                <div class="col" align="center">
-                <h1>Conference inspired by: </h1>
+<section id="sponsorBlock">
+    <div class="container">
+        <div class="row" id="{{page_component.section_title}}">
+            <div class="col" align="center">
+                <h1>{{page_component.section_title}}</h1>
             </div>
         </div>
         <div class="row">
-                <div class="col mt-2" align="center">
-                <a href="{{page_component.forked_from.description}}" >
+            {%for sponsor in page_component.sponsors%}
+            <div class="col-12 col-md-6 my-2" align="center">
+                <a href="{{sponsor.description}}">
                     <picture>
-                              <source srcset="https:{{page_component.forked_from.url(w=300, fm='webp', q=100)}}" type="image/webp">
-                              <source srcset="https:{{page_component.forked_from.url(w=300, fm='jpg', q=100)}}" type="image/jpeg">
-                              <img src="https:{{page_component.forked_from.url(w=300, fm='jpg', q=100)}}" alt="{{page_component.forked_from.title}}" class="img-fluid">
+                        <source
+                            srcset="https:{{sponsor.url(w=300, fm='webp', q=100)}}"
+                            type="image/webp"
+                        />
+                        <source
+                            srcset="https:{{sponsor.url(w=300, fm='jpg', q=100)}}"
+                            type="image/jpeg"
+                        />
+                        <img
+                            src="https:{{sponsor.url(w=300, fm='jpg', q=100)}}"
+                            alt="{{sponsor.title}}"
+                            class="img-fluid"
+                        />
                     </picture>
                 </a>
-                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="row">
+            <div class="col" align="center">
+                <h1>Proudly part of the YouGotThis Network:</h1>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col mt-2" align="center">
+                <a href="{{page_component.forked_from.description}}">
+                    <picture>
+                        <source
+                            srcset="
+                                https:{{page_component.forked_from.url(w=300,
+                                fm='webp',
+                                q=100)}}
+                            "
+                            type="image/webp"
+                        />
+                        <source
+                            srcset="
+                                https:{{page_component.forked_from.url(w=300,
+                                fm='jpg',
+                                q=100)}}
+                            "
+                            type="image/jpeg"
+                        />
+                        <img
+                            src="https:{{page_component.forked_from.url(w=300, fm='jpg', q=100)}}"
+                            alt="{{page_component.forked_from.title}}"
+                            class="img-fluid"
+                        />
+                    </picture>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -7,6 +7,7 @@ from rich_text_renderer.null_renderer import NullRenderer
 import os
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
@@ -40,6 +41,7 @@ renderer = RichTextRenderer(
 
 app = Flask(__name__)
 Markdown(app)
+
 
 @app.route("/")
 def home_page():
