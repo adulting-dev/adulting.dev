@@ -1,30 +1,36 @@
 {% block location %}
-    <section class='locationBlock '>
-        <div class="container"  >
-            <div class="row" id="{{page_component.section_title}}">
-                <div class="col-md-6 my-auto" align="left">
-                    <h1>{{page_component.section_title}}</h1>
-                    <p>{{page_component.location_string}}</p>
-                </div>
-                <div class="col-md-6" align="center">
-                    <img id="static_map"
-                        onclick="swap_map()"
-                        src="https://maps.googleapis.com/maps/api/staticmap?center={{page_component.location.lat}},{{page_component.location.lon}}
+<section class="locationBlock">
+    <div class="container">
+        <div class="row" aligh id="{{page_component.section_title}}">
+            <div class="col-md-6 my-auto" align="center">
+                <h1>{{page_component.section_title}}</h1>
+                <p>{{page_component.location_string}}</p>
+            </div>
+            <div class="col-md-6" align="center">
+                <img
+                    id="static_map"
+                    onclick="swap_map()"
+                    src="https://maps.googleapis.com/maps/api/staticmap?center={{page_component.location.lat}},{{page_component.location.lon}}
                         &zoom=17&size=640x640
                         &maptype=roadmap
                         &markers=color:cyan%7Clabel:MicrosoftHQ%7C{{page_component.location.lat}},{{page_component.location.lon}}
-                        &key={{MAP_KEY}}" alt='Venue on a map'>
-                    <div id="map" style="display: none">
-                        <iframe
-                          width="640"
-                          height="640"
-                          frameborder="0" style="border:0"
-                          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBzRPMffDZ7jswDf81Qrw9Sz8_ebsLjY7Q
-                            &q={{page_component.location_string}}" allowfullscreen>
-                        </iframe>
-                    </div>
+                        &key={{MAP_KEY}}"
+                    alt="Venue on a map"
+                />
+                <div id="map" style="display: none">
+                    <iframe
+                        width="640"
+                        height="640"
+                        frameborder="0"
+                        style="border: 0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBzRPMffDZ7jswDf81Qrw9Sz8_ebsLjY7Q
+                            &q={{page_component.location_string}}"
+                        allowfullscreen
+                    >
+                    </iframe>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
